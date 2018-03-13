@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/config/config.base.js"],"names":["mongo","uri","db"],"mappings":";;;;;kBAAe;AACbA,SAAO;AACLC,SAAK,EADA;AAELC,QAAI;AAFC;AADM,C","file":"config.base.js","sourcesContent":["export default {\n  mongo: {\n    uri: \"\",\n    db: \"portfolito\",\n  },\n};\n"]}
