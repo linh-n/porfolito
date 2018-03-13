@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 
-import * as albums from "./modules/albums";
+import addAlbum from "./albums/add";
 
 const app = express();
 
@@ -11,6 +11,6 @@ app.get("/", (req, res) => {
   res.sendStatus(200);
 });
 
-app.post("/albums/add", albums.add);
+app.post("/albums/add", addAlbum);
 
 export default app;

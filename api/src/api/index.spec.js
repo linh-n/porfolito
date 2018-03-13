@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "./app";
+import app from ".";
 
 describe("API server", () => {
   it("works", async () => {
