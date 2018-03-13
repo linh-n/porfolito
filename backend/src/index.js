@@ -1,10 +1,25 @@
 import React from "react";
 import { render } from "react-dom";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { Route } from "react-router-dom";
+import { ConnectedRouter } from "react-router-redux";
 
-import "./assets/css/style.bundle.css";
+import store, { history } from "./store";
+import Home from "./scenes/Home";
+import Albums from "./scenes/Albums";
 
-const store = createStore({});
+import "./assets/style.bundle.css";
+import "./assets/vendors.bundle.css";
+import "./assets/webfonts.css";
 
-render(<Provider store={store} />, document.getElementById("root"));
+render(
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" exact component={Home} />
+        <Route path="/albums" component={Albums} />
+      </div>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById("root"),
+);
