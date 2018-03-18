@@ -5,8 +5,11 @@ import Header from "./Header";
 
 class Layout extends React.Component {
   componentWillMount() {
-    document.getElementsByTagName("body")[0].className =
-      "m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default";
+    document.getElementsByTagName("body")[0].className = `m-page--wide
+      m-header--fixed
+      m-header--fixed-mobile
+      m-footer--push
+      m-aside--offcanvas-default`;
   }
 
   render() {

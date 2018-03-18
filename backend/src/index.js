@@ -7,6 +7,7 @@ import { ConnectedRouter } from "react-router-redux";
 import store, { history } from "./store";
 import Home from "./scenes/Home";
 import Albums from "./scenes/Albums";
+import Photos from "./scenes/Photos";
 
 import "./assets/style.bundle.css";
 import "./assets/vendors.bundle.css";
@@ -18,6 +19,7 @@ render(
       <div>
         <Route path="/" exact component={Home} />
         <Route path="/albums" component={Albums} />
+        <Route path="/photos" component={Photos} />
       </div>
     </ConnectedRouter>
   </Provider>,

@@ -1,6 +1,5 @@
 import React from "react";
-
-import Layout from "../containers/ui/Layout";
+import { Layout } from "../modules/ui";
 
 const Albums = () => <Layout title="Albums" />;
 

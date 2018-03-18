@@ -32,23 +32,34 @@ const Header = props => (
   <header className="m-grid__item m-header ">
     <div className="m-header__top" />
     <div className="m-header__bottom">
-      <div className="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+      <div
+        className="m-container m-container--responsive m-container--xxl
+        m-container--full-height m-page__container"
+      >
         <div className="m-stack m-stack--ver m-stack--desktop">
           <div className="m-stack__item m-stack__item--middle m-stack__item--fluid">
             <button
-              className="m-aside-header-menu-mobile-close m-aside-header-menu-mobile-close--skin-light"
+              className="m-aside-header-menu-mobile-close
+              m-aside-header-menu-mobile-close--skin-light"
               id="m_aside_header_menu_mobile_close_btn"
             >
               <i className="la la-close" />
             </button>
             <div
               id="m_header_menu"
-              className="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas
-              m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light
+              className="m-header-menu m-aside-header-menu-mobile
+              m-aside-header-menu-mobile--offcanvas
+              m-header-menu--skin-dark m-header-menu--submenu-skin-light
+              m-aside-header-menu-mobile--skin-light
               m-aside-header-menu-mobile--submenu-skin-light"
             >
               <ul className="m-menu__nav m-menu__nav--submenu-arrow ">
-                <NavLi to="/" className="m-menu__link" activeClassName="m-menu__item--active" location={props.location}>
+                <NavLi
+                  to="/"
+                  className="m-menu__link"
+                  activeClassName="m-menu__item--active"
+                  location={props.location}
+                >
                   Dashboard
                 </NavLi>
                 <NavLi
@@ -58,6 +69,14 @@ const Header = props => (
                   location={props.location}
                 >
                   Albums
+                </NavLi>
+                <NavLi
+                  to="/photos"
+                  className="m-menu__link"
+                  activeClassName="m-menu__item--active"
+                  location={props.location}
+                >
+                  Photos
                 </NavLi>
               </ul>
             </div>

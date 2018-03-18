@@ -7,7 +7,7 @@
   "rules": {
     "quotes": ["error", "double"],
     "arrow-parens": ["error", "as-needed"],
-    "max-len": ["error", 120],
+    "max-len": ["error", 100],
     "react/prefer-stateless-function": [0],
     "react/jsx-filename-extension": [0],
     "jsx-a11y/anchor-is-valid": [
