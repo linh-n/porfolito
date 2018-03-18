@@ -5,9 +5,12 @@
   },
   "extends": "airbnb/base",
   "rules": {
+    "max-len": ["error", 100],
     "quotes": ["error", "double"],
     "arrow-parens": ["error", "as-needed"],
     "no-console": "off",
-    "function-paren-newline": "off"
+    "object-curly-newline": "off",
+    "function-paren-newline": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }]
   }
 }

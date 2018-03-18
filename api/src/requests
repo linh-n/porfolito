@@ -4,3 +4,52 @@ content-type: application/json
 {
     "name": "test"
 }
+
+###
+
+GET http://localhost:3030/albums/10 HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:3030/albums/delete/5aa83d56e503683738ebe07b HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:3030/photos/add HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test"
+}
+
+###
+
+GET http://localhost:3030/photos/10 HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:3030/photos/delete/5aa846320a86df287cdea7e8 HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:3030/photos/update/5aa846320a86df287cdea7e8 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "modified",
+    "timeCreated": 0
+}
+
+###
+
+PUT http://localhost:3030/photos/addToAlbum/5aa846320a86df287cdea7e8/5aa84582089c0f2818187349 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "modified",
+    "timeCreated": 0
+}

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/config/config.dev.js"],"names":["config","mongo","uri"],"mappings":";;;;AAAA;;;;;;AAEA,IAAMA;AAEJC,sBACK,iBAAKA,KADV;AAEEC,SAAK;AAFP;AAFI,EAAN","file":"config.dev.js","sourcesContent":["import base from \"./config.base\";\n\nconst config = {\n  ...base,\n  mongo: {\n    ...base.mongo,\n    uri: \"mongodb://localhost:27017\",\n  },\n};\n"]}
