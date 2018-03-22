@@ -5,7 +5,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { combineEpics, createEpicMiddleware } from "redux-observable";
 
 import { uiReducer, uiEpic } from "./ui";
-import { searchReducer } from "./search";
 
 export const history = createHistory();
 const router = routerMiddleware(history);
@@ -16,6 +15,5 @@ const middleWares = [router, epicMiddleware];
 const rootReducer = combineReducers({
   router: routerReducer,
   ui: uiReducer,
-  search: searchReducer,
 });
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleWares)));

@@ -1,8 +1,9 @@
 import { push, LOCATION_CHANGE } from "react-router-redux";
 import { combineEpics } from "redux-observable";
-import { availableLocales } from "locale/catalogs";
 
 import { setLocale } from "./reducer";
+
+const availableLocales = []; // FIXME
 
 const extractLocaleFromUrl = pathname => {
   const [, localeInUrl] = pathname.split("/");

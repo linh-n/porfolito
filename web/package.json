@@ -1,20 +1,22 @@
 {
-  "name": "global-trade-helpdesk",
+  "name": "portfolito-web",
   "version": "0.0.1",
   "homepage": "http://www.helpmetrade.org/",
   "description": "",
   "license": "",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.itc-cci.net:MAR/gthd.git"
+    "url": "https://github.com/linh4nq/porfolito.git"
   },
-  "main": "src/sites/global/index.js",
-  "author": "International Trade Center",
+  "main": "src/sites/frontend/index.js",
+  "author": "Linh Nguyen",
   "scripts": {
-    "start": "webpack-dev-server -d --open --colors --hot --config ./webpack.config.js --port 8400",
+    "start":
+      "webpack-dev-server -d --open --colors --hot --config ./webpack.config.js --port 8400",
     "clean": "del-cli dist/*",
     "build": "webpack --mode production --optimize-minimize --env.compress",
-    "build:all": "npm run clean && npm run build && npm run build -- --env.site demo",
+    "build:all":
+      "npm run clean && npm run build && npm run build -- --env.site frontend",
     "test": "cls && jest",
     "test:watch": "jest --watchAll"
   },

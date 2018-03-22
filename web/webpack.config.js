@@ -3,9 +3,11 @@ const path = require("path");
 const modulesConfig = require("./webpack/modules.js");
 const pluginsConfig = require("./webpack/plugins.js");
 
-module.exports = function (env) {
-  const shouldCompress = env !== undefined && env.compress !== undefined && env.compress === true;
-  const siteName = env !== undefined && env.site !== undefined ? env.site : "global";
+module.exports = function(env) {
+  const shouldCompress =
+    env !== undefined && env.compress !== undefined && env.compress === true;
+  const siteName =
+    env !== undefined && env.site !== undefined ? env.site : "frontend";
   const siteSrcPath = path.resolve(__dirname, `src/sites/${siteName}/`);
   const siteDistPath = path.resolve(__dirname, `dist/${siteName}/`);
 
@@ -15,19 +17,19 @@ module.exports = function (env) {
     output: {
       path: siteDistPath,
       publicPath: "/",
-      filename: "bundle.js",
+      filename: "bundle.js"
     },
     devServer: {
       contentBase: siteDistPath,
       historyApiFallback: {
-        index: "index.html",
-      },
+        index: "index.html"
+      }
     },
     module: modulesConfig(siteSrcPath),
     resolve: {
       extensions: ["*", ".js", ".jsx"],
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
-    devtool: "source-map",
+    devtool: "source-map"
   };
 };

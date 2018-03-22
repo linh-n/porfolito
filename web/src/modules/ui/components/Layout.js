@@ -1,19 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { I18nProvider } from "@lingui/react";
-import catalogs from "locale/catalogs";
 
 import Header from "../containers/Header";
 import Footer from "./Footer";
 import Sponsors from "./Sponsors";
 
 const Layout = ({ children, language }) => (
-  <I18nProvider language={language} catalogs={catalogs}>
+  <div>
     <Header />
+    {language}
     {children}
     <Sponsors />
     <Footer />
-  </I18nProvider>
+  </div>
 );
 
 Layout.propTypes = {
