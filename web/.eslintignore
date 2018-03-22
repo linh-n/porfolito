@@ -1,0 +1,3 @@
+locale/
+webpack/
+*.config.js
