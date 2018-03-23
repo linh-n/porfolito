@@ -13,6 +13,7 @@ module.exports = function (sitePath) {
             },
           },
         }),
+        require('lost')
       ],
     },
   };
