@@ -10,5 +10,8 @@ export default handleActions(
   },
   {
     locale: "en",
+    layout: {
+      background: "https://photzy.com/assets/4657574571_4273c5ee0e_o.jpg?v=1", // FIXME:
+    },
   },
 );

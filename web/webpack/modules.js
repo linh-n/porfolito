@@ -1,6 +1,7 @@
 const postcssConfig = require("./postcss.js");
 
-module.exports = function (sitePath) {
+module.exports = function (sitePath, shouldCompress) {
+  const cssIdentName = shouldCompress ? "[hash:base64:5]" : "[name]-[local]-[hash:base64:5]";
   return {
     rules: [
       {
@@ -36,7 +37,7 @@ module.exports = function (sitePath) {
             loader: "css-loader",
             options: {
               modules: true,
-              localIdentName: "[name]-[hash:base64:5]",
+              localIdentName: cssIdentName,
               importLoaders: 1,
               root: "/src/",
             },
