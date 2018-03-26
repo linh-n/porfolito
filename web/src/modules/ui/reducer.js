@@ -11,7 +11,8 @@ export default handleActions(
   {
     locale: "en",
     layout: {
-      background: "https://photzy.com/assets/4657574571_4273c5ee0e_o.jpg?v=1", // FIXME:
+      background:
+        "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/flickr/396525383_9140cca7c0_o.jpg", // FIXME:
     },
   },
 );

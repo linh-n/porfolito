@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { combineEpics, createEpicMiddleware } from "redux-observable";
 
 import { uiReducer, uiEpic } from "./ui";
+import { galleryReducer } from "./gallery";
 
 export const history = createHistory();
 const router = routerMiddleware(history);
@@ -15,5 +16,6 @@ const middleWares = [router, epicMiddleware];
 const rootReducer = combineReducers({
   router: routerReducer,
   ui: uiReducer,
+  gallery: galleryReducer,
 });
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleWares)));

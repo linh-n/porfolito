@@ -3,7 +3,7 @@ import { combineEpics } from "redux-observable";
 
 import { setLocale } from "./reducer";
 
-const availableLocales = []; // FIXME:
+const availableLocales = ["en", "fr"]; // FIXME:
 
 const extractLocaleFromUrl = pathname => {
   const [, localeInUrl] = pathname.split("/");

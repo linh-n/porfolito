@@ -7,7 +7,7 @@ import Sidebar from "../../containers/Sidebar";
 import "./css/global.css";
 import styles from "./css/layout.module.css";
 
-const Layout = ({ children, background = "" }) => (
+const Layout = ({ children, background }) => (
   <div className={styles.wrapper}>
     <div className={styles.bg}>
       <img src={background} alt="" />

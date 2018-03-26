@@ -39,6 +39,15 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            className={styles.navLink}
+            activeClassName={styles.navLinkActive}
+            to={`/${currentLocale}/blog`}
+          >
+            Blog
+          </NavLink>
+        </li>
       </ul>
       <hr />
       <ul>
