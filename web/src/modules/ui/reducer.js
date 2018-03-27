@@ -18,7 +18,7 @@ export default handleActions(
     }),
   },
   {
-    locale: "en",
+    locale: undefined,
     layout: {
       background:
         "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/flickr/396525383_9140cca7c0_o.jpg", // FIXME:

@@ -7,12 +7,15 @@ import { ConnectedRouter } from "react-router-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import "utils/polyfills";
+import { initIfNavigateDirectlyToViewingPhoto } from "utils/url";
 import store, { history } from "modules/store";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+
+initIfNavigateDirectlyToViewingPhoto();
 
 render(
   <Provider store={store}>
@@ -22,7 +25,7 @@ render(
         <Route path="/:locale/about" component={About} />
         <Route path="/:locale/contact" component={About} />
         <Route path="/:locale/blog" component={Blog} />
-        <Redirect from="/" to="/en/gallery" exact />
+        <Redirect from="/" to="/en/gallery" />
         <Route component={NotFound} />
       </Switch>
     </ConnectedRouter>

@@ -21,7 +21,7 @@ describe("UI epic", () => {
         },
       },
       ui: {
-        locale: "en",
+        locale: undefined,
       },
     });
   });

@@ -22,7 +22,7 @@
 }
 
 .panel {
-  flex-grow: 0;
+  flex-grow: 1;
   padding-left: 30px;
   width: 330px;
   text-align: right;
@@ -35,6 +35,8 @@
 
 .panel h1 {
   margin: 1.5em 0;
+  font-family: "Dancing Script";
+  font-size: 3em;
 }
 
 .panel p {

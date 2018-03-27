@@ -7,7 +7,7 @@ const ViewPhoto = ({ photo, handleClose }) =>
   photo !== null && (
     <div className={styles.viewPhoto}>
       <div className={styles.photo}>
-        <FadeIn className={styles.load}>
+        <FadeIn className={styles.load} once>
           {onload => <img src={photo.src} alt={photo.title} onLoad={onload} />}
         </FadeIn>
       </div>

@@ -1,16 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Gallery from "react-photo-gallery";
+import { forceCheck } from "react-lazyload";
 
 import Thumbnail from "../Thumbnail";
 import styles from "./gallery.module.css";
 
-const GalleryComponent = ({ photos, children, hidden }) => (
-  <div className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
-    <Gallery photos={photos} margin={20} ImageComponent={Thumbnail} />
-    {children}
-  </div>
-);
+class GalleryComponent extends React.Component {
+  componentDidUpdate() {
+    forceCheck();
+  }
+
+  render() {
+    const { photos, children, hidden } = this.props;
+    return (
+      <div className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
+        <Gallery photos={photos} margin={20} ImageComponent={Thumbnail} />
+        {children}
+      </div>
+    );
+  }
+}
 
 GalleryComponent.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({})).isRequired,

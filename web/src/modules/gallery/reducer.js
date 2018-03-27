@@ -3,6 +3,7 @@ import { handleActions, createAction } from "redux-actions";
 export const addPhotos = createAction("add gallery.photos");
 export const setViewingPhoto = createAction("add gallery.viewing");
 export const closeViewingPhoto = createAction("close gallery.viewing");
+
 export default handleActions(
   {
     [addPhotos]: (state, action) => ({
@@ -15,6 +16,7 @@ export default handleActions(
     }),
   },
   {
+    viewing: null,
     photos: [
       {
         src: "https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg",

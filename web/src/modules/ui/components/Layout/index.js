@@ -10,7 +10,7 @@ import styles from "./css/layout.module.css";
 const Layout = ({ children, background }) => (
   <ScrollContext>
     <div className={styles.wrapper}>
-      <div className={styles.bg} style={{ "background-image": `url(${background})` }} />
+      <div className={styles.bg} style={{ backgroundImage: `url(${background})` }} />
       <div className={styles.layout}>
         <div className={styles.leftCol}>
           <Sidebar />

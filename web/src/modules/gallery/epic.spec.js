@@ -21,7 +21,7 @@ describe("fetchUserEpic", () => {
         },
       },
       gallery: {
-        viewing: undefined,
+        viewing: null,
         photos: [],
       },
       ui: {
@@ -50,6 +50,22 @@ describe("fetchUserEpic", () => {
   });
 
   it("should set viewing photo to undefined on changing to not matched location", () => {
+    store = mockStore({
+      router: {
+        location: {
+          pathname: "/en/about?param=value",
+          search: "",
+        },
+      },
+      gallery: {
+        viewing: {},
+        photos: [],
+      },
+      ui: {
+        locale: "en",
+      },
+    });
+
     const pushAction = {
       type: LOCATION_CHANGE,
       payload: {
