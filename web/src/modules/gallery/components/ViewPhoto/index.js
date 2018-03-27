@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FadeIn from "react-lazyload-fadein";
+import Icon from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/fontawesome-pro-light";
 import styles from "./view-photo.module.css";
 
 const ViewPhoto = ({ photo, handleClose }) =>
@@ -19,7 +21,7 @@ const ViewPhoto = ({ photo, handleClose }) =>
             handleClose();
           }}
         >
-          Close
+          Close <Icon icon={faTimes} size="2x" transform="down-3" />
         </button>
         <h1>{photo.title}</h1>
         <p>

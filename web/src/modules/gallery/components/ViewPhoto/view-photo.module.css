@@ -34,7 +34,7 @@
 }
 
 .panel h1 {
-  margin: 1.5em 0;
+  margin: 1.5em 0 1em;
   font-family: "Dancing Script";
   font-size: 3em;
 }
@@ -43,4 +43,11 @@
   line-height: 1.6;
   letter-spacing: 1px;
   font-size: 0.9em;
+}
+
+@media (max-height: 800px) {
+  .viewPhoto {
+    top: 60px;
+    height: calc(100vh - 120px);
+  }
 }

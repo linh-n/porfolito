@@ -5,3 +5,9 @@
 .gallery.hidden {
   display: none;
 }
+
+@media (max-height: 800px) {
+  .gallery {
+    margin-top: 40px;
+  }
+}

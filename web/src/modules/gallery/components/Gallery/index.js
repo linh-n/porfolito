@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Gallery from "react-photo-gallery";
+import { withContentRect } from "react-measure";
 import { forceCheck } from "react-lazyload";
 
 import Thumbnail from "../Thumbnail";
@@ -12,10 +13,19 @@ class GalleryComponent extends React.Component {
   }
 
   render() {
-    const { photos, children, hidden } = this.props;
+    const { photos, children, hidden, measureRef, contentRect } = this.props;
+
+    let margin = 10;
+    let columns = 3;
+
+    if (contentRect.bounds.width < 800) {
+      margin = 5;
+      columns = 2;
+    }
+
     return (
-      <div className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
-        <Gallery photos={photos} margin={20} ImageComponent={Thumbnail} />
+      <div ref={measureRef} className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
+        <Gallery photos={photos} columns={columns} margin={margin} ImageComponent={Thumbnail} />
         {children}
       </div>
     );
@@ -26,6 +36,8 @@ GalleryComponent.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   children: PropTypes.node,
   hidden: PropTypes.bool,
+  measureRef: PropTypes.any, // eslint-disable-line
+  contentRect: PropTypes.any, // eslint-disable-line
 };
 
 GalleryComponent.defaultProps = {
@@ -33,4 +45,4 @@ GalleryComponent.defaultProps = {
   hidden: false,
 };
 
-export default GalleryComponent;
+export default withContentRect("bounds")(GalleryComponent);
