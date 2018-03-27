@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 
 import styles from "./photo.module.css";
 
-const Photo = ({ margin, photo: { src, link, title, subtitle, width, height } }) => (
+const Thumbnail = ({ margin, photo: { src, link, title, subtitle, width, height } }) => (
   <div className={styles.photo} style={{ width, height, margin }}>
     <Link to={link}>
-      <FadeIn height={height} once>
-        {onload => <img src={src} alt={title} onLoad={onload} />}
-      </FadeIn>
+      <FadeIn height={height}>{onload => <img src={src} alt={title} onLoad={onload} />}</FadeIn>
     </Link>
-    {title && <div className={styles.title}>{title}</div>}
-    {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
+    <div className={styles.desc}>
+      {title && <div className={styles.title}>{title}</div>}
+      {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
+    </div>
   </div>
 );
 
-Photo.propTypes = {
+Thumbnail.propTypes = {
   margin: PropTypes.number.isRequired,
   photo: PropTypes.shape({
     src: PropTypes.string,
@@ -29,4 +29,4 @@ Photo.propTypes = {
   }).isRequired,
 };
 
-export default Photo;
+export default Thumbnail;

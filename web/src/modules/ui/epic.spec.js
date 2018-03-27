@@ -9,7 +9,7 @@ import { setLocale } from "./reducer";
 const epicMiddleware = createEpicMiddleware(epics);
 const mockStore = configureMockStore([epicMiddleware]);
 
-describe("fetchUserEpic", () => {
+describe("UI epic", () => {
   let store;
 
   beforeEach(() => {

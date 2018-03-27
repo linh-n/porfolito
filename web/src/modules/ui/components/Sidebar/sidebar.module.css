@@ -48,15 +48,6 @@
   font-size: 0.875em;
 }
 
-.locales button {
-  border: 0;
-  background: transparent;
-  color: #fff;
-  padding: 0;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
 .locales span {
   display: inline-block;
   margin: 0 0.5em;

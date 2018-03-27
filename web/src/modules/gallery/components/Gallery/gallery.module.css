@@ -1,0 +1,7 @@
+.gallery {
+  margin-top: 90px;
+}
+
+.gallery.hidden {
+  display: none;
+}

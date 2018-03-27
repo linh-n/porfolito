@@ -16,7 +16,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
             exact
             className={styles.navLink}
             activeClassName={styles.navLinkActive}
-            to={`/${currentLocale}`}
+            to={`/${currentLocale}/gallery`}
           >
             Portfolio
           </NavLink>

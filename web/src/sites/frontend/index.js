@@ -18,11 +18,11 @@ render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/:locale" component={Home} exact />
+        <Route path="/:locale/gallery" component={Home} />
         <Route path="/:locale/about" component={About} />
         <Route path="/:locale/contact" component={About} />
         <Route path="/:locale/blog" component={Blog} />
-        <Redirect from="/" to="/en" exact />
+        <Redirect from="/" to="/en/gallery" exact />
         <Route component={NotFound} />
       </Switch>
     </ConnectedRouter>

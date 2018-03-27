@@ -1,33 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "normalize.css";
-import ScrollArea from "react-scrollbar";
+import { ScrollContext, ScrollContainer } from "react-router-scroll-4";
 
 import Sidebar from "../../containers/Sidebar";
 import "./css/global.css";
 import styles from "./css/layout.module.css";
 
 const Layout = ({ children, background }) => (
-  <div className={styles.wrapper}>
-    <div className={styles.bg}>
-      <img src={background} alt="" />
-    </div>
-    <div className={styles.layout}>
-      <div className={styles.leftCol}>
-        <Sidebar />
-      </div>
-      <div className={styles.rightCol}>
-        <ScrollArea
-          speed={0.8}
-          className={styles.scrollArea}
-          contentClassName={styles.scrollContent}
-          horizontal={false}
-        >
-          {children}
-        </ScrollArea>
+  <ScrollContext>
+    <div className={styles.wrapper}>
+      <div className={styles.bg} style={{ "background-image": `url(${background})` }} />
+      <div className={styles.layout}>
+        <div className={styles.leftCol}>
+          <Sidebar />
+        </div>
+        <div className={styles.rightCol}>
+          <ScrollContainer scrollKey="gallery-scroll" shouldUpdateScroll={() => false}>
+            <div>{children}</div>
+          </ScrollContainer>
+        </div>
       </div>
     </div>
-  </div>
+  </ScrollContext>
 );
 
 Layout.propTypes = {

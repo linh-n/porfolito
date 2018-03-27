@@ -5,4 +5,12 @@ describe("UI Reducer", () => {
     const initialState = { locale: "en" };
     expect(reducer(initialState, actions.setLocale("fr"))).toEqual({ locale: "fr" });
   });
+
+  it("should set layout background", () => {
+    const initialState = { layout: { background: "init background" } };
+    const expectedState = { layout: { background: "set background" } };
+    expect(reducer(initialState, actions.setLayoutBackground("set background"))).toEqual(
+      expectedState,
+    );
+  });
 });

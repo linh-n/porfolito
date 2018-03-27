@@ -5,11 +5,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { combineEpics, createEpicMiddleware } from "redux-observable";
 
 import { uiReducer, uiEpic } from "./ui";
-import { galleryReducer } from "./gallery";
+import { galleryReducer, galleryEpic } from "./gallery";
 
 export const history = createHistory();
 const router = routerMiddleware(history);
-const rootEpic = combineEpics(uiEpic);
+const rootEpic = combineEpics(uiEpic, galleryEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const middleWares = [router, epicMiddleware];
 
