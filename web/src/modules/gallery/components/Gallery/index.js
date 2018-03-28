@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Gallery from "react-photo-gallery";
 import { withContentRect } from "react-measure";
 import { forceCheck } from "react-lazyload";
+import { ScrollContainer } from "react-router-scroll-4";
 
 import Thumbnail from "../Thumbnail";
 import styles from "./gallery.module.css";
@@ -24,10 +25,12 @@ class GalleryComponent extends React.Component {
     }
 
     return (
-      <div ref={measureRef} className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
-        <Gallery photos={photos} columns={columns} margin={margin} ImageComponent={Thumbnail} />
-        {children}
-      </div>
+      <ScrollContainer scrollKey="gallery-scroll" shouldUpdateScroll={() => false}>
+        <div ref={measureRef} className={`${styles.gallery} ${hidden ? styles.hidden : ""}`}>
+          <Gallery photos={photos} columns={columns} margin={margin} ImageComponent={Thumbnail} />
+          {children}
+        </div>
+      </ScrollContainer>
     );
   }
 }

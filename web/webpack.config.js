@@ -27,6 +27,9 @@ module.exports = function (env) {
     resolve: {
       extensions: ["*", ".js", ".jsx"],
       modules: [path.resolve(__dirname, "src"), "node_modules"],
+      alias: {
+        '@fortawesome/fontawesome-pro-light$': '@fortawesome/fontawesome-pro-light/shakable.es.js'
+      }
     },
     devtool: "source-map",
   };

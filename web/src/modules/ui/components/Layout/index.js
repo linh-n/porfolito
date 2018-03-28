@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "normalize.css";
-import { ScrollContext, ScrollContainer } from "react-router-scroll-4";
+import { ScrollContext } from "react-router-scroll-4";
 
 import Sidebar from "../../containers/Sidebar";
 import "./css/global.css";
@@ -16,9 +16,7 @@ const Layout = ({ children, background }) => (
           <Sidebar />
         </div>
         <div className={styles.rightCol}>
-          <ScrollContainer scrollKey="gallery-scroll" shouldUpdateScroll={() => false}>
-            <div>{children}</div>
-          </ScrollContainer>
+          <div>{children}</div>
         </div>
       </div>
     </div>
