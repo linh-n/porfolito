@@ -9,5 +9,19 @@
     ],
     "@babel/react"
   ],
-  "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "react-intl",
+      {
+        "messagesDir": "./translations"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["@babel/env", "@babel/react"]
+    }
+  }
 }

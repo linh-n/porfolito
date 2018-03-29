@@ -9,7 +9,7 @@ import { setLocale } from "./reducer";
 const epicMiddleware = createEpicMiddleware(epics);
 const mockStore = configureMockStore([epicMiddleware]);
 
-describe("UI epic", () => {
+describe("UI epics", () => {
   let store;
 
   beforeEach(() => {
@@ -21,7 +21,8 @@ describe("UI epic", () => {
         },
       },
       ui: {
-        locale: undefined,
+        locale: "en",
+        availableLocales: ["en", "es", "fr"],
       },
     });
   });
@@ -38,7 +39,7 @@ describe("UI epic", () => {
     expect(pushAction.payload.args).toEqual(["/fr/about?param=value"]);
   });
 
-  it("should set new locale on changing location", () => {
+  it("should redirect to correct locale on navigating", () => {
     const pushAction = {
       type: LOCATION_CHANGE,
       payload: {
@@ -50,6 +51,6 @@ describe("UI epic", () => {
     };
     store.dispatch(pushAction);
     const [, setLocaleAction] = store.getActions();
-    expect(setLocaleAction.payload).toEqual("fr");
+    expect(setLocaleAction.payload.args[0]).toEqual("/en/about");
   });
 });

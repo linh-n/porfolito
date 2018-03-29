@@ -1,8 +1,6 @@
-const availableLocales = ["en", "fr"]; // FIXME: load actual locales
-
 export const URL_VIEWING_PHOTO_REGEX = /\/.*?\/gallery\/(.*)/;
 
-export const extractLocaleFromPathname = pathname => {
+export const extractLocaleFromPathname = (pathname, availableLocales) => {
   const [, localeInUrl] = pathname.split("/");
   return availableLocales.includes(localeInUrl) ? localeInUrl : "en";
 };
