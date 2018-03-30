@@ -21,7 +21,7 @@ import { availableLocales, localesData, messages } from "./i18n";
 addLocaleData(localesData);
 store.dispatch(setAvailableLocales(availableLocales));
 store.dispatch(setMessages(messages));
-initIfNavigateDirectlyToViewingPhoto();
+initIfNavigateDirectlyToViewingPhoto(availableLocales);
 
 const acceptedLocales = availableLocales.join("|");
 

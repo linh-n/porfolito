@@ -39,13 +39,15 @@ GalleryComponent.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   children: PropTypes.node,
   hidden: PropTypes.bool,
-  measureRef: PropTypes.any, // eslint-disable-line
-  contentRect: PropTypes.any, // eslint-disable-line
+  measureRef: PropTypes.shape({}),
+  contentRect: PropTypes.shape({}),
 };
 
 GalleryComponent.defaultProps = {
   children: undefined,
   hidden: false,
+  measureRef: null,
+  contentRect: null,
 };
 
 export default withContentRect("bounds")(GalleryComponent);

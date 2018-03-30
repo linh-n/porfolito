@@ -10,6 +10,22 @@
   margin: 50px 0;
 }
 
+.sidebar .locale {
+  text-transform: lowercase;
+  font-size: 0.9em;
+}
+
+.sidebar .locale:not(:first-child)::before {
+  content: "/";
+  display: inline-block;
+  margin: 0 5px;
+  font-weight: var(--fontWeightNormal);
+}
+
+.sidebar .locale.navLinkActive::before {
+  opacity: 0.5;
+}
+
 .logo {
   font-size: 2em;
   margin: 100px 0 80px;
@@ -24,7 +40,7 @@
 
 .sidebar nav li {
   list-style-type: none;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 .text {
@@ -36,6 +52,8 @@
 .navLink {
   composes: text;
   text-transform: uppercase;
+  padding: 0.4em 0;
+  display: inline-block;
 }
 
 .navLinkActive {

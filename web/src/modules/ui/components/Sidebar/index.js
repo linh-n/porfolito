@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 
+import LocaleButton from "./LocaleButton";
 import styles from "./sidebar.module.css";
 
-const Header = ({ currentLocale, handleChangeLocale }) => (
+const Header = ({ currentLocale, availableLocales, handleChangeLocale, location }) => (
   <aside className={styles.sidebar}>
     <nav>
       <Link to={`/${currentLocale}`} className={styles.logo}>
@@ -64,22 +65,25 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
       <p className={styles.text}>linh@mail.ch</p>
       <hr />
       <div className={styles.locales}>
-        <button onClick={() => handleChangeLocale("en")}>english</button>
-        <span>/</span>
-        <button onClick={() => handleChangeLocale("vi")}>tiếng việt</button>
+        {availableLocales.map(locale => (
+          <LocaleButton
+            key={locale}
+            locale={locale}
+            currentLocale={currentLocale}
+            handleChangeLocale={handleChangeLocale}
+            location={location}
+          />
+        ))}
       </div>
     </nav>
   </aside>
 );
 
 Header.propTypes = {
-  handleChangeLocale: PropTypes.func,
-  currentLocale: PropTypes.string,
-};
-
-Header.defaultProps = {
-  handleChangeLocale: undefined,
-  currentLocale: undefined,
+  handleChangeLocale: PropTypes.func.isRequired,
+  currentLocale: PropTypes.string.isRequired,
+  availableLocales: PropTypes.arrayOf(PropTypes.string).isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 export default Header;

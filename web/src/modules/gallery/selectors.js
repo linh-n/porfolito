@@ -10,6 +10,7 @@ export const getPhotosState = createSelector([getPhotos, getLocale], (photos, lo
     link: `/${locale}/gallery/le-test`,
     title: photo.name,
     subtitle: new Date(photo.date * 1000).toString(),
+    placeHolderPhoto: photo.src,
   })),
 );
 export const getViewingPhotoState = createSelector([getViewingPhoto], viewing => viewing);
