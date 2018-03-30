@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 import styles from "./sidebar.module.css";
 
@@ -18,7 +19,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
             activeClassName={styles.navLinkActive}
             to={`/${currentLocale}/gallery`}
           >
-            Portfolio
+            <FormattedMessage id="sidebar.gallery" defaultMessage="Gallery" />
           </NavLink>
         </li>
         <li>
@@ -27,7 +28,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
             activeClassName={styles.navLinkActive}
             to={`/${currentLocale}/about`}
           >
-            About
+            <FormattedMessage id="sidebar.about" defaultMessage="About" />
           </NavLink>
         </li>
         <li>
@@ -36,16 +37,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
             activeClassName={styles.navLinkActive}
             to={`/${currentLocale}/contact`}
           >
-            Contact
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={styles.navLink}
-            activeClassName={styles.navLinkActive}
-            to={`/${currentLocale}/blog`}
-          >
-            Blog
+            <FormattedMessage id="sidebar.contact" defaultMessage="Contact" />
           </NavLink>
         </li>
       </ul>
@@ -74,7 +66,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => (
       <div className={styles.locales}>
         <button onClick={() => handleChangeLocale("en")}>english</button>
         <span>/</span>
-        <button onClick={() => handleChangeLocale("fr")}>français</button>
+        <button onClick={() => handleChangeLocale("vi")}>tiếng việt</button>
       </div>
     </nav>
   </aside>

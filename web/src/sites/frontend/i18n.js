@@ -1,10 +1,8 @@
 import en from "react-intl/locale-data/en";
-import es from "react-intl/locale-data/es";
-import fr from "react-intl/locale-data/fr";
+import vi from "react-intl/locale-data/vi";
 
-// import frMessages from "i18n/fr.json";
-// import esMessages from "i18n/es.json";
+import viMessages from "i18n/vi.json";
 
-export const availableLocales = ["en", "fr", "es"];
-export const localesData = [...en, ...es, ...fr];
-// export const messages = { fr: frMessages, es: esMessages };
+export const availableLocales = ["en", "vi"];
+export const localesData = [...en, ...vi];
+export const messages = { vi: viMessages };

@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import Layout from "../components/Layout";
-import { getLocaleState, getLayoutBackgroundState } from "../selectors";
+import { getLocaleState, getLayoutBackgroundState, getCurrentLocaleMessages } from "../selectors";
 
 const mapStateToProps = state => ({
-  language: getLocaleState(state),
+  locale: getLocaleState(state),
   background: getLayoutBackgroundState(state),
+  messages: getCurrentLocaleMessages(state),
 });
 export default connect(mapStateToProps)(Layout);

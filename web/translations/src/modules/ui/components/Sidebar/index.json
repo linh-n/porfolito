@@ -1,0 +1,14 @@
+[
+  {
+    "id": "sidebar.gallery",
+    "defaultMessage": "Gallery"
+  },
+  {
+    "id": "sidebar.about",
+    "defaultMessage": "About"
+  },
+  {
+    "id": "sidebar.contact",
+    "defaultMessage": "Contact"
+  }
+]

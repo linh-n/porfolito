@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2018-03-30T16:39:48.903Z\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Generator: react-intl-po\n"
+
+
+#: translations/src/modules/ui/components/Sidebar/index.json
+#. [sidebar.about]
+#. defaultMessage is:
+#. About
+msgctxt "sidebar.about"
+msgid "About"
+msgstr ""
+
+#: translations/src/modules/ui/components/Sidebar/index.json
+#. [sidebar.contact]
+#. defaultMessage is:
+#. Contact
+msgctxt "sidebar.contact"
+msgid "Contact"
+msgstr ""
+
+#: translations/src/modules/ui/components/Sidebar/index.json
+#. [sidebar.gallery]
+#. defaultMessage is:
+#. Gallery
+msgctxt "sidebar.gallery"
+msgid "Gallery"
+msgstr ""
