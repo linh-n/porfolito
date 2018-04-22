@@ -3,21 +3,19 @@ export default [
   type Photo {
     id: String!
     src: String!
+    title: String
     description: String
-    album: Album
-    location: Location
+    album: String
+    location: String
+    timeCreated: Float
   }
 
-  type Album {
-    id: String!
-    name: String!
+  input PhotoInput {
+    src: String!
+    title: String
     description: String
-    photos: [Photo]
-  }
-
-  type Location {
-    id: String!
-    name: String!
+    album: String
+    location: String
   }
 
   scalar Upload
@@ -25,13 +23,13 @@ export default [
   type Query {
     photo(id: String!): Photo
     photos: [Photo]
-    album(id: String!): Album
-    albums: [Album]
   }
 
   type Mutation {
     singleUpload (file: Upload!): String!
     multipleUpload (files: [Upload!]!): [String!]!
+    addPhoto (photo: PhotoInput): Photo
+    updatePhoto (photo: PhotoInput): Photo
   }
   `,
 ];

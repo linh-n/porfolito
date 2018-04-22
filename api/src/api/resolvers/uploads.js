@@ -38,10 +38,7 @@ export default {
       const { resolve, reject } = await Promise.all(files.map(processUpload));
 
       if (reject.length) {
-        reject.forEach(({ name, message }) =>
-          // eslint-disable-next-line no-console
-          console.error(`${name}: ${message}`),
-        );
+        reject.forEach(({ name, message }) => console.error(`${name}: ${message}`));
       }
 
       return resolve;

@@ -1,5 +1,4 @@
 import { ObjectId } from "mongodb";
-import { albumsCollection } from "./albums";
 
 const STATUS_ACTIVE = "active";
 const STATUS_DELETED = "deleted";
@@ -46,17 +45,5 @@ export const photosActions = {
       .sort({ timeCreated: -1 })
       .limit(pageSize)
       .toArray();
-  },
-
-  addToAlbum: (photoId, albumId) => async db => {
-    const updatePhoto = photosCollection(db).update(
-      { _id: new ObjectId(photoId) },
-      { album: albumId },
-    );
-    const updateAlbum = albumsCollection(db).update(
-      { _id: new ObjectId(albumId) },
-      { $push: { photos: photoId } },
-    );
-    return Promise.all([updatePhoto, updateAlbum]);
   },
 };
